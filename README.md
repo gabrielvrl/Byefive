@@ -1,7 +1,7 @@
-# [<img src=".github/images/logoByefive.png" width="50" height="25" /> Byefive](https://yuca.vercel.app/)
+# [<img src=".github/images/logoByefive.png" width="75" height="25" /> Byefive](https://yuca.vercel.app/)
 
 <p align="center">
-   <img src=".github/images/bannerByefive.png" />
+   <img src=".github/images/bannerByefive.jpeg" />
 </p>
 
 <br />
