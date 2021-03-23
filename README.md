@@ -1,4 +1,4 @@
-# [<img src=".github/images/logoByefive.png" width="25" height="25" /> Byefive](https://www.google.com/)
+# [<img src=".github/images/logoByefive.png" width="40" height="40" /> Byefive](https://www.google.com/)
 
 <p align="center">
    <img src=".github/images/bannerByefive.jpeg" />
