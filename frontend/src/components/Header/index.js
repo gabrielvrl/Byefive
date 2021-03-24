@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router";
 
 import "./Header.css";
 import logo from "../../assets/logoByefiveFull.png";
@@ -38,4 +39,4 @@ function Header({ history }) {
     );
 }
 
-export default Header;
+export default withRouter(Header);
