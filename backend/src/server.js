@@ -6,16 +6,24 @@ const routes = require("./routes");
 
 const server = express();
 
-mongoose.connect(
-    "mongodb+srv://gabrielvrl:gabrielvrl@cluster0-eieef.mongodb.net/optimus?retryWrites=true&w=majority",
-    {
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
-    }
-);
+const port = 3333;
+
+mongoose.connect("mongodb://localhost/Byefive", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
+let db = mongoose.connection;
+
+db.on("error", () => {
+    console.log("Houve um erro");
+});
+db.once("open", () => {
+    console.log("Banco carregado");
+});
 
 server.use(cors());
 server.use(express.json());
 server.use(routes);
 
-server.listen(3333);
+server.listen(port, () => console.log(`App listening on port ${port}`));
