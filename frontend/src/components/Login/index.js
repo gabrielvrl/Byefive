@@ -4,7 +4,7 @@ import { withRouter } from "react-router";
 import "../style.css";
 
 function Login({ history }) {
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     async function handleSubmit(e) {
@@ -20,10 +20,10 @@ function Login({ history }) {
         <div className="container">
             <form onSubmit={handleSubmit}>
                 <input
-                    placeholder="Digite o seu email"
-                    value={email}
-                    type="email"
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Digite o seu username"
+                    value={username}
+                    type="username"
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <input
                     placeholder="Digite sua senha"
