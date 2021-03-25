@@ -1,6 +1,5 @@
 const express = require("express");
-const UsuarioController = require("./controllers/UsuarioController");
-const ProjetoController = require("./controllers/ProjetoController");
+const UserController = require("./controllers/UserController");
 
 const routes = express.Router();
 
@@ -9,7 +8,6 @@ const routes = express.Router();
 //    return res.send('opa world')
 //});
 
-routes.post("/cadastrousuario", UsuarioController.store);
-routes.post("/cadastroprojeto", ProjetoController.store);
+routes.post("/signupuser", UserController.store);
 
 module.exports = routes;
