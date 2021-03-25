@@ -1,15 +1,12 @@
-const User = require("../models/user");
+const User = require("../models/User");
 
 module.exports = {
     async store(req, res) {
-        const { username, password, firstName, lastName } = req.body;
-        console.log(req.body.cargo);
+        const { firstName, lastName, email, username, password } = req.body;
+        console.log(req.body);
 
         const userExists = await User.findOne({
             username: username,
-            password: password,
-            firstName: firstName,
-            lastName: lastName,
         });
 
         if (userExists) {
@@ -18,10 +15,11 @@ module.exports = {
 
         //API? const response = await axios.get(`link da api/${username}`);
         const user = await User.create({
-            username,
-            password,
             firstName,
             lastName,
+            email,
+            username,
+            password,
         });
 
         return res.json({ user });
