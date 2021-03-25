@@ -3,14 +3,25 @@ import { withRouter } from "react-router";
 
 import "../style.css";
 
-function SignUp() {
+import api from "../../services/api";
+
+function SignUp({ history }) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
+        await api.post("/signupuser", {
+            firstName,
+            lastName,
+            email,
+            username,
+            password,
+        });
+        history.push("/login");
     }
 
     return (
@@ -30,6 +41,11 @@ function SignUp() {
                     placeholder="Digite o seu email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                    placeholder="Digite o seu username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <input
                     placeholder="Digite sua senha"
