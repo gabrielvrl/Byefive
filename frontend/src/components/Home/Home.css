@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+.container-home {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-home .text-content {
+    max-width: 550px;
+    margin: auto;
+}
+
+.container-home .text-content h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 42px;
+    line-height: 48px;
+    letter-spacing: 0px;
+    font-weight: 800;
+    color: #a71680;
+    margin: 0;
+}
+
+.container-home .text-content h1#firstP {
+    color: #749ba9;
+}
+
+.container-home .text-content h2 {
+    font-size: 24px;
+    line-height: 40px;
+    font-family: Open Sans;
+    font-weight: 400;
+}
+
+.container-home .text-content h2#login {
+    color: #a71680;
+    cursor: pointer;
+}
+
+.container-home .text-content h2#login:hover {
+    text-decoration: underline;
+}
+
+.container-home .img-content .personagem-img {
+    width: 80%;
+    margin-top: 10%;
+    transition: all 0.2s ease-out;
+}
