@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .container form {
@@ -49,6 +49,7 @@
     font-size: 18px;
     font-weight: 400;
     cursor: pointer;
+    align-self: center;
 }
 
 .container h1:hover {
