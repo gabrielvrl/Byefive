@@ -57,12 +57,19 @@ div .headerDiv .leftSection img {
 
     margin: 3% 5%;
 
-    text-align: center;
+    transition: all 0.2s ease-out;
+}
+
+.headerDiv h1:hover {
+    border-bottom: 2px solid white;
+    margin-bottom: 0;
 }
 
 button#nav-learn-more-button {
     background-color: #48a0f4;
     color: white;
+
+    cursor: pointer;
 
     width: 210px;
 
@@ -87,6 +94,14 @@ button#nav-learn-more-button {
     font-size: 18px;
     font-family: "open sans", sans-serif;
     font-weight: bold;
+
+    transition: all 0.2s ease-out;
+}
+
+button#nav-learn-more-button:hover {
+    background-color: #a71680;
+    color: #48a0f4;
+    border-color: #48a0f4;
 }
 
 @media (max-width: 500px) {
