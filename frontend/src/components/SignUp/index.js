@@ -24,6 +24,11 @@ function SignUp({ history }) {
         history.push("/login");
     }
 
+    function handleLogin(e) {
+        e.preventDefault();
+        history.push("/login");
+    }
+
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
@@ -54,6 +59,7 @@ function SignUp({ history }) {
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <button type="submit">Efetuar Cadastro</button>
+                <h1 onClick={handleLogin}>Já está cadastrado? Faça o Login!</h1>
             </form>
         </div>
     );
