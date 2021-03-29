@@ -18,7 +18,8 @@ function Home({ history }) {
         <div className="container-home">
             <div className="text-content">
                 <h1 id="firstP">Melhore sua gestão de</h1>
-                <h1> Promotoras & Pontos de Venda</h1>
+                <h1>Promotoras</h1>
+                <h1>& Pontos de Venda</h1>
                 <h2>
                     Agora você controla bônus, comissões e cada venda do seu PDV
                     em tempo real. Conecte-se com promotoras e vendedoras de um
