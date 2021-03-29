@@ -54,7 +54,10 @@ div .headerDiv .leftSection img {
 
     white-space: nowrap;
 
-    margin: 3% 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+
+    padding: 0;
 
     transition: all 0.2s ease-out;
 }
