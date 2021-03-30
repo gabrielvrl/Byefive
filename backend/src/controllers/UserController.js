@@ -1,4 +1,5 @@
 const User = require("../models/User");
+import crypto from "../security/crypto";
 
 module.exports = {
     async store(req, res) {
@@ -6,20 +7,19 @@ module.exports = {
         console.log(req.body);
 
         const userExists = await User.findOne({
-            username: username,
+            username,
         });
 
         if (userExists) {
             return res.json(userExists);
         }
 
-        //API? const response = await axios.get(`link da api/${username}`);
         const user = await User.create({
             firstName,
             lastName,
             email,
             username,
-            password,
+            password: crypto(password),
         });
 
         return res.json({ user });
