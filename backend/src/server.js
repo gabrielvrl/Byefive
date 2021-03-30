@@ -16,10 +16,10 @@ mongoose.connect("mongodb://localhost/Byefive", {
 let db = mongoose.connection;
 
 db.on("error", () => {
-    console.log("Houve um erro");
+    console.log("Something went wrong!");
 });
 db.once("open", () => {
-    console.log("Banco carregado");
+    console.log("Database loaded");
 });
 
 server.use(cors());
