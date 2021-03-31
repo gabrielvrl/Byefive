@@ -1,5 +1,5 @@
 const User = require("../models/User");
-import crypto from "../security/crypto";
+// const crypto = require("../security/crypto");
 
 module.exports = {
     async store(req, res) {
@@ -19,7 +19,8 @@ module.exports = {
             lastName,
             email,
             username,
-            password: crypto(password),
+            // password: crypto(password),
+            password,
         });
 
         return res.json({ user });
