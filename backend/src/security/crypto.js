@@ -1,6 +1,6 @@
 const bcrypt = require("bcryptjs");
 
-async function crypto(password) {
+export async function crypto(password) {
     const saltRounds = 10;
 
     const salt = bcrypt.genSalt(saltRounds);
@@ -9,5 +9,3 @@ async function crypto(password) {
 
     return hasedPassword;
 }
-
-export default crypto;
