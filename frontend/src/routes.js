@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import LoggedUser from "./components/LoggedUser";
 import AboutUs from "./components/AboutUs";
 import PageNotFound from "./components/PageNotFound";
 
@@ -17,6 +18,7 @@ export default function Routes() {
                 <Route path="/login" exact component={Login} />
                 <Route path="/signup" exact component={SignUp} />
                 <Route path="/aboutus" exact component={AboutUs} />
+                <Route path="/user/:id" component={LoggedUser} />
                 <Route component={PageNotFound} />
             </Switch>
         </BrowserRouter>
