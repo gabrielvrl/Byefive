@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router";
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import api from "../../services/api";
+
 import "../style.css";
 
 function Login({ history }) {
@@ -9,6 +14,35 @@ function Login({ history }) {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        notify();
+
+        const response = await api.post("/login", {
+            username,
+            password,
+        });
+
+        const { _id } = response.data;
+        const apiUsername = response.data.username;
+        const apiPassword = response.data.password;
+
+        if (username === apiUsername && password === apiPassword) {
+            history.push(`/user/${_id}`);
+        } else {
+            notify();
+            console.log("error");
+        }
+    }
+
+    function notify() {
+        toast.error("Something went wrong!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
 
     function handleSingUp(e) {
