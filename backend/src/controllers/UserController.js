@@ -1,10 +1,24 @@
-const User = require("../models/User");
-// const crypto = require("../security/crypto");
+import User from "../models/User.js";
+import crypto from "../security/crypto.js";
 
-module.exports = {
+export default {
+    async index(req, res) {
+        const { username, password } = req.body;
+
+        const userExists = await User.findOne({
+            username,
+            password,
+        });
+
+        if (userExists) {
+            return res.json(userExists);
+        }
+
+        return status(404);
+    },
+
     async store(req, res) {
         const { firstName, lastName, email, username, password } = req.body;
-        console.log(req.body);
 
         const userExists = await User.findOne({
             username,
