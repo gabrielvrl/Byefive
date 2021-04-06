@@ -55,3 +55,10 @@
 .container h1:hover {
     color: #a71680;
 }
+
+#incorrect-info {
+    color: red;
+    display: none;
+    margin: auto;
+    margin-top: 2%;
+}
