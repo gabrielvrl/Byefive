@@ -1,11 +1,11 @@
-const bcrypt = require("bcryptjs");
+import bcrypt from "bcrypt";
 
-export async function crypto(password) {
+export default async function crypto(password) {
     const saltRounds = 10;
 
-    const salt = bcrypt.genSalt(saltRounds);
+    const salt = bcrypt.genSaltSync(saltRounds);
 
-    const hasedPassword = bcrypt.hash(password, salt);
+    const hasedPassword = bcrypt.hashSync(password, salt);
 
     return hasedPassword;
 }
