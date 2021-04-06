@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router";
 
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 import api from "../../services/api";
 
 import "../style.css";
@@ -14,9 +11,8 @@ function Login({ history }) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        notify();
 
-        const response = await api.post("/login", {
+        const response = await api.get("/login", {
             username,
             password,
         });
@@ -28,21 +24,8 @@ function Login({ history }) {
         if (username === apiUsername && password === apiPassword) {
             history.push(`/user/${_id}`);
         } else {
-            notify();
-            console.log("error");
+            document.getElementById("incorrect-info").style.display("block");
         }
-    }
-
-    function notify() {
-        toast.error("Something went wrong!", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
     }
 
     function handleSingUp(e) {
@@ -65,6 +48,7 @@ function Login({ history }) {
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                 />
+                <p id="incorrect-info">Usuário ou senha incorretos.</p>
                 <button type="submit">Entrar</button>
             </form>
             <h1 onClick={handleSingUp}>
