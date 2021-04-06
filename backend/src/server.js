@@ -1,8 +1,9 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import morgan from "morgan";
 
-const routes = require("./routes");
+import routes from "./routes.js";
 
 const server = express();
 
@@ -25,5 +26,6 @@ db.once("open", () => {
 server.use(cors());
 server.use(express.json());
 server.use(routes);
+server.use(morgan("tiny"));
 
 server.listen(port, () => console.log(`App listening on port ${port}`));
