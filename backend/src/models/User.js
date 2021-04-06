@@ -1,4 +1,5 @@
-const { Schema, model } = require("mongoose");
+import pkg from "mongoose";
+const { Schema, model } = pkg;
 
 const UserSchema = new Schema(
     {
@@ -29,4 +30,4 @@ const UserSchema = new Schema(
     }
 );
 
-module.exports = model("User", UserSchema);
+export default model("User", UserSchema);
